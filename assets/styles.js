@@ -30,7 +30,7 @@ function weatherDisplay(event) {
         currentWeather(city);
     }
 }
-
+//function to push current weather
 function currentWeather(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+APIKey;
     $.ajax({
@@ -52,6 +52,7 @@ function currentWeather(city) {
     })
 }
 
+//function to posh five day
 function fiveDay(cityid) {
     var dayover = false;
     var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
@@ -74,6 +75,5 @@ function fiveDay(cityid) {
 
 
 
-
+//click listener 
 $('#search-button').on('click', weatherDisplay);
-$('#search-button').on('click', fiveDay);
